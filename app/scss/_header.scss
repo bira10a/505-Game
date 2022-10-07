@@ -1,0 +1,362 @@
+.header {
+  @extend %bg-img;
+  width: 100%;
+  height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  &__top {
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    animation: menu 1.5s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-direction: alternate;
+  }
+
+  &__top--sticky {
+    background-color: #843131ed;
+    padding-bottom: 10px;
+    transition: all linear 0.4s;
+  }
+
+  .header-top__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    @include adaptiveValue("margin-right", 140, 0);
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    @extend %bg-img;
+    display: block;
+    background-color: $accent;
+    width: 30px;
+    height: 30px;
+    transition: all linear 0.2s;
+    
+    &:hover {
+      background-color: $default;
+    }
+    
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px;
+    align-self: center;
+  }
+
+  &__title {
+    margin-bottom: 7px;
+    animation: headerTitle 1.5s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-direction: alternate;
+  }
+
+  &__subtitle {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    text-align: center;
+    animation: headerTitle 2s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-direction: alternate;
+  }
+
+  &__btn {
+    animation: headerBtn 1s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-direction: alternate;
+  }
+
+  &__btn > span {
+    margin-right: 16px;
+    padding-right: 10px;
+    border-right: 1px solid #1A1917;
+
+    &:last-child {
+      margin-right: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__select {
+    position: relative;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-left: auto;
+    @include adaptiveValue("margin-right", 20, 10);
+  }
+
+  &__arrow {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 50px;
+    padding: 15px;
+    animation: headerBtn 1.4s;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-direction: alternate;
+    outline: transparent;
+    transition: all linear 0.2s;
+
+    &::after {
+      content: "";
+      display: block;
+      mask: url('../images/sprite.svg#header-arrow') center / cover no-repeat;
+      background-color: $default;
+      width: 20px;
+      height: 8px;
+      margin: 0 auto;
+      margin-top: 10px;
+      transition: all linear 0.2s;
+    }
+
+    &:focus {
+      box-shadow: 3px 1px 10px 5px #e0edcf;
+    }
+    
+    &:hover {
+      color: $accent;
+
+      &::after {
+        background-color: $accent;
+      }
+    }
+    
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.menu {
+  @include r(992) {
+    position: absolute;
+    top: 0;
+    left: -1000px;
+    z-index: 10;
+    padding: 30px;
+    background-color: #843131ed;
+    opacity: 1;
+    height: 50vh;
+    transition: all cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s;
+
+    &.menu--active {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include r(992) {
+      flex-direction: column;
+      margin-top: 40px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include adaptiveValue("margin-right", 38, 10);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $default;
+    transition: all linear 0.2s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include r(992) {
+      margin-bottom: 50px;
+      margin-right: 0;;
+    }
+  }
+
+  &__link {
+    outline: transparent;
+
+    &::before {
+      @include pseudo;
+      width: 100%;
+      height: 2px;
+      background-color: $accent;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      transform: scaleX(0);
+      transition: all linear 0.2s;
+    }
+
+    &:focus {
+      box-shadow: 3px 1px 10px 5px #e0edcf;
+    }
+    
+    &:hover {
+      color: $accent;
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+}
+
+.burger {
+  display: none;
+  @include burger; 
+
+  @include r(992) {
+    display: block;
+    z-index: 11;
+    order: 2;
+    @include adaptiveValue("margin-left", 40, 20);
+  }
+}
+
+.new-select {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 14px 42px 10px 0;
+  transition: border-color linear .2s;
+
+  &::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
+  transform: rotate(-45deg);
+  top: 20px;
+  right: 17px;
+  transition: transform linear 0.2s, top linear 0.2s;
+}
+
+&.on::after {
+  transform: rotate(135deg);
+  top: 15px;
+}
+
+  &__list {
+    position: absolute;
+    left: -10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 3px;
+    padding: 10px 5px 10px 10px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    transition: all linear 0.2s;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+@keyframes menu {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerTitle {
+  0% {
+    transform: translateX(-3000px);
+    opacity: 0;
+  }
+  
+  20% {
+    opacity: 0;
+  }
+  
+  65% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes headerBtn {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

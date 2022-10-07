@@ -1,0 +1,233 @@
+.top-slider {
+  @extend %bg-img;
+  padding: 188px 0 145px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width:$tablet){
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    max-width: 420px;
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 72, 30);
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      @include adaptiveValue("width", 710, 250);
+      height: 2px;
+      background-color: $default;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      z-index: 1;
+    }
+
+    @media (max-width:$tablet){
+      &::before {
+        width: 100%
+      }
+    }
+
+    span {
+      @include adaptiveValue("font-size", 24, 16);
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text,
+  &__text2  {
+    display: block;
+    @include adaptiveValue("font-size", 18, 14);
+    max-width: 340px;
+    width: 100%;
+    margin-left: 120px;
+
+    @media (max-width:$tablet){
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__text2 {
+    @media (max-width:$tablet){
+      margin-bottom: 25px;
+    }
+  }
+
+  &__list {
+    max-width: 500px;
+    width: 100%;
+    height: 610px;
+    min-width: 0;
+    margin-right: 20px;
+
+    img {
+      object-fit: contain;
+    }
+
+    @media (max-width:$tablet){
+      align-self: center;
+      margin: 0;
+    }
+
+    @media (max-width:$mobile){
+      @include adaptiveValue("height", 600, 300);
+
+      img {
+        @include adaptiveValue("height", 600, 300); 
+      }
+    }
+  }
+
+  &__left {
+    min-width: 0;
+  }
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 13px;
+  mask: url('../images/sprite.svg#header-arrow') center / cover no-repeat;
+  background-color: $default;
+  transition: all linear 0.2s;
+
+  &:hover {
+    background-color: $accent;
+  }
+
+}
+
+.slick-prev {
+  transform: rotate(90deg);
+  left: -26px;
+}
+
+.slick-next {
+  transform: rotate(-90deg);
+  right: -22px;
+}
+
+.slick-disabled {
+  opacity: 0;
+}
+
+
+
+ /* Слайдер */
+ .slick-slider {}
+
+ /* Слайдер запущен */
+ .slick-slider.slick-initialized {}
+
+ /* Слайдер с точками */
+ .slick-slider.slick-dotted {}
+
+ /* Ограничивающая оболочка */
+ .slick-list {
+
+ }
+
+ /* Лента слайдов */
+ .slick-track {
+  display: flex;
+ }
+
+ /* Слайд */
+ .slick-slide {}
+
+ /* Слайд активный (показывается) */
+ .slick-slide.slick-active {
+
+ }
+
+ /* Слайд основной */
+ .slick-slide.slick-current {}
+
+ /* Слайд по центру */
+ .slick-slide.slick-center {
+ }
+
+ /* Клонированный слайд */
+ .slick-slide.slick-cloned {
+
+ }
+
+  /* Стрелка */
+  .slick-arrow {}
+
+  /* Стрелка влево */
+  .slick-arrow.slick-prev {}
+
+  /* Стрелка вправо */
+  .slick-arrow.slick-next {}
+
+  /* Стрелка не активная */
+  .slick-arrow.slick-disabled {}
+
+  /* Точки (булиты) */
+  .slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: 13px;
+    left: 30%;
+
+    @media (max-width:$mobile){
+       left: 20%; 
+    }
+  }
+
+  .slick-dots li {
+    margin-right: 50px;
+    font-size: 0%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  /* Активная точка */
+  .slick-dots li.slick-active {
+    background-color: $default;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 45px;
+      height: 2px;
+      background-color: $default;
+      top: 45%;
+      right: -35px;
+    }
+
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  /* Элемент точки */
+  .slick-dots li button {
+    width: 14px;
+    height: 14px;
+    border: 1px solid $default;
+    border-radius: 50%;
+  }

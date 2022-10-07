@@ -1,0 +1,44 @@
+.breadcrumbs {
+  background-color: red;
+  padding-top: 25px;
+  padding-bottom: 23px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: red;
+    margin-right: 18px;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid red;
+      border-right: 1px solid red;
+      transform: rotate(45deg);
+      top: 4px;
+      right: -10px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

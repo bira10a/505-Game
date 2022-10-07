@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game-shop</title>
+  <link rel="icon" href="images/favicon.png" sizes="16x16, 32x32, 48x48" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body id="body">
+  <h1 class="sr-only">online store for buying video games</h1>
+  <header class="header" style="background-image: url('images/header-bg.jpg');">
+    <div class="header__container">
+      <div class="header__top header-top">
+        <div class="header-top__container">
+          <a class="header__logo" href="#body">
+            <img class="header__logo-img" src="images/logo.png" alt="logo" width="55" height="55" loading="lazy">
+          </a>
+    
+          <button class="burger" type="button">
+            <span class="burger__line"></span>
+            <span class="sr-only">Открыть меню</span>
+          </button>
+  
+          <nav class="menu__body menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="#">MAIN</a>
+              </li>
+              
+              <li class="menu__item">
+                <a class="menu__link" href="#">about</a>
+              </li>
+              
+              <li class="menu__item">
+                <a class="menu__link" href="#">game features</a>
+              </li>
+  
+              <li class="menu__item">
+                <a class="menu__link" href="#">System requirements</a>
+              </li>
+  
+              <li class="menu__item">
+                <a class="menu__link" href="#">quotes</a>
+              </li>
+            </ul>
+          </nav>
+    
+          <select class="header__select">
+            <option disabled>eng</option>
+            <option>eng</option>
+            <option>rus</option>
+            <option>fra</option>
+            <option>deu</option>
+          </select>
+    
+          <ul class="header__list">
+            <li class="header__item">
+              <a class="header__link" href="#" target="_blank" style="-webkit-mask-image: url('images/sprite.svg#xbox-icon'); mask-image: url('images/sprite.svg#xbox-icon');"></a>
+            </li>
+    
+            <li class="header__item">
+              <a class="header__link" href="#" target="_blank" style="-webkit-mask-image: url('images/sprite.svg#steam-icon'); mask-image: url('images/sprite.svg#steam-icon');"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header__center">
+        <h2 class="header__title title">SURVIVE AT ALL COSTS</h2>
+        <span class="header__subtitle">Experience new social battle royale game</span>
+        <a class="header__btn btn" href="#" target="_blank">
+          <span>Buy now on Steam</span>
+          <span><span>$</span>14.99</span>
+        </a>
+      </div>
+      
+      <a class="header__arrow" href="#">The story</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="top-slider" style="background-image: url('images/top-slider/slider-bg.jpg');">
+      <div class="top-slider__container">
+        <div class="top-slider__left">
+          <h2 class="top-slider__title title">
+            <span>What is SOS?</span>
+            social battle royale game</h2>
+          <span class="top-slider__text">Each round, you and 15 other contestants compete to
+          escape a deadly island filled with monsters. The trick is: three people can survive. Will you run
+          solo or form friendships with others to escape?</span>
+          <span class="top-slider__text2">Making the right decisions could be the
+          difference between life and death.</span>
+        </div>
+
+        <ul class="top-slider__list">
+          <li class="top-slider__item">
+            <img class="top-slider__img" src="images/top-slider/slider-img3.png" alt="slider" width="502" height="610">
+          </li>
+
+          <li class="top-slider__item">
+            <img class="top-slider__img" src="images/top-slider/slider-img2.png" alt="slider" width="502" height="610">
+          </li>
+          
+          <li class="top-slider__item">
+            <img class="top-slider__img" src="images/top-slider/slider-img3.png" alt="slider" width="502" height="610">
+          </li> 
+          
+          <li class="top-slider__item">
+            <img class="top-slider__img" src="images/top-slider/slider-img1.png" alt="slider" width="502" height="610">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  </footer>
+  <!-- <div id="overlay" onclick="offOverlay()"></div> -->
+  <script src="js/main.min.js"></script>
+</body>
+</html>
